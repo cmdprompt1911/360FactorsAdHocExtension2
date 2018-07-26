@@ -30,11 +30,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Izenda.BI.Core">
-      <HintPath>..\..\Izenda\API\bin\Izenda.BI.Core.dll</HintPath>
+    <Reference Include="Izenda.BI.Core, Version=2.7.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Izenda\API 2.6.21\bin\Izenda.BI.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Izenda.BI.Framework">
-      <HintPath>..\..\Izenda\API\bin\Izenda.BI.Framework.dll</HintPath>
+    <Reference Include="Izenda.BI.Framework, Version=2.7.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Izenda\API 2.6.21\bin\Izenda.BI.Framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
