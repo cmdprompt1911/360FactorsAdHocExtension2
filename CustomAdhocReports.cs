@@ -45,7 +45,11 @@ namespace CustomAdhocReports
                     ReportFieldAlias = null
                 };
 
-                result.FilterFields.Add(firstFilter);
+                //clean up tenantId for comparison
+                var tenantIdAllLower = tenantId.Trim().ToLower();
+                //added so if you are logged in at the factor's reseller or ADMIN level, the filter gets left off
+                if(tenantIdAllLower != "none" && tenantIdAllLower.Length > 0 && tenantIdAllLower != "rfactors")
+                    result.FilterFields.Add(firstFilter);
 
 
                 var logic = $"({filterPosition})";
