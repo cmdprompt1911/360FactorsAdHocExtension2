@@ -27,7 +27,7 @@ namespace CustomAdhocReports
 
             Func<ReportFilterSetting, int, QuerySource, QuerySourceField, Guid, Relationship, int> addHiddenFilters = (result, filterPosition, querySource, field, equalOperator, rel) =>
             {
-                //Here we construct a filter behind the scenes, passing the tenantId variable we made above into the value portion of the filter, so it will only show rows where CustomerID = tenantId
+                //Here we construct a filter behind the scenes, passing the tenantId variable we made above into the value portion of the filter, so it will only show rows where customerCode = tenantId
                 var firstFilter = new ReportFilterField
                 {
                     Alias = $"customerCode{filterPosition}",
