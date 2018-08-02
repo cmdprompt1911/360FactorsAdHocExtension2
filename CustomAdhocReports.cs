@@ -23,7 +23,9 @@ namespace CustomAdhocReports
             var filterFieldName = "customerCode";
 
             //Here we can use the UserContext reference to pull the TenantID value from the current users (The TenantID value you chose during the Tenant Setup portion)
-            var tenantId = UserContext.Current.CurrentTenant.TenantID;
+            var tenantId = String.Empty;
+            if(UserContext.Current.CurrentTenant != null)
+                tenantId = UserContext.Current.CurrentTenant.TenantID;
 
             Func<ReportFilterSetting, int, QuerySource, QuerySourceField, Guid, Relationship, int> addHiddenFilters = (result, filterPosition, querySource, field, equalOperator, rel) =>
             {
@@ -73,7 +75,7 @@ namespace CustomAdhocReports
 
             var ds = param.ReportDefinition.ReportDataSource;
 
-            // Build the hidden filters for ship country fields
+            // Build the hidden filters for customerCode fields
             foreach (var querySource in param.QuerySources // Scan thru the query sources that are involved in the report
                 .Where(x => x.QuerySourceFields.Any(y => filterFieldName.Contains(y.Name))))
 
